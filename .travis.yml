@@ -2,6 +2,13 @@ language: node_js
 arch:
   - amd64
   - ppc64le
+sudo: false
+language: node_js
 node_js:
-  - "0.10"
-  - "0.11"
+- '0.10'
+- '4'
+before_install:
+  npm install -g npm@'>=2.13.5'
+  - if [[ `npm -v` != 3* ]];
+    then npm i -g npm@3;
+    fi
